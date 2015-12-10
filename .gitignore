@@ -1,0 +1,17 @@
+*.tps
+*.log
+*.synctex
+*.ps
+*.blg
+*.dvi
+*.bbl
+*.aux
+*.orig
+*.brf
+*.idx
+*.ilg
+*.ind
+*.lof
+*.lot
+*.out
+*.toc
