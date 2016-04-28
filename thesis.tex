@@ -61,6 +61,8 @@
 %load hyperref last
 \usepackage[pdftex,plainpages=false,pdfpagelabels,pagebackref,colorlinks=true,citecolor=DarkGreen,linkcolor=NavyBlue,urlcolor=DarkRed,filecolor=green,bookmarksopen=true,bookmarks=false]{hyperref} % links coloridos
 
+\input{macros}
+
 % ---------------------------------------------------------------------------- %
 \frenchspacing                          % arruma o espaço: id est (i.e.) e exempli gratia (e.g.) 
 \urlstyle{same}                         % URL com o mesmo estilo do texto e não mono-spaced
@@ -120,35 +122,33 @@ framexrightmargin=10pt
 \thispagestyle{empty}
 \begin{center}
     \vspace*{2.3cm}
-    \textbf{\Large{Título do trabalho a ser apresentado à \\
-    CPG para a dissertação/tese}}\\
+    \textbf{\Large{\phdTitle}}\\
     
     \vspace*{1.2cm}
-    \Large{Nome completo do Autor}
+    \Large{Samuel Martins Barbosa Neto}
     
     \vskip 2cm
     \textsc{
-    Dissertação/Tese apresentada\\[-0.25cm] 
-    ao\\[-0.25cm]
-    Instituto de Matemática e Estatística\\[-0.25cm]
-    da\\[-0.25cm]
-    Universidade de São Paulo\\[-0.25cm]
-    para\\[-0.25cm]
-    obtenção do título\\[-0.25cm]
-    de\\[-0.25cm]
-    Mestre/Doutor em Ciências}
+    Thesis presented\\[-0.25cm] 
+    to the\\[-0.25cm]
+    Institute of Mathematics and Statistics\\[-0.25cm]
+    of the\\[-0.25cm]
+    University of São Paulo\\[-0.25cm]
+    as requirement\\[-0.25cm]
+    to obtain the title\\[-0.25cm]
+    of\\[-0.25cm]
+    Doctor of Philosophy}
     
     \vskip 1.5cm
-    Programa: Nome do Programa\\
-    Orientador: Prof. Dr. Nome do Orientador\\
-    Coorientador: Prof. Dr. Nome do Coorientador
+    Program: Computer Science\\
+    Advisor: Prof. Dr. Roberto Marcondes César Jr.\\
+    Coadvisor: Prof. Dr. Cláudio Santos Pinhanez
 
        \vskip 1cm
-    \normalsize{Durante o desenvolvimento deste trabalho o autor recebeu auxílio
-    financeiro da CAPES/CNPq/FAPESP}
+    \normalsize{The author received financial support from CAPES/CNPq/FAPESP}
     
     \vskip 0.5cm
-    \normalsize{São Paulo, fevereiro de 2011}
+    \normalsize{São Paulo, \thesisMonth \thesisYear}
 \end{center}
 
 % ---------------------------------------------------------------------------- %
@@ -165,68 +165,67 @@ framexrightmargin=10pt
 \thispagestyle{empty}
     \begin{center}
         \vspace*{2.3 cm}
-        \textbf{\Large{Título do trabalho a ser apresentado à \\
-        CPG para a dissertação/tese}}\\
+        \textbf{\Large{\phdTitle}}\\
         \vspace*{2 cm}
     \end{center}
 
     \vskip 2cm
 
     \begin{flushright}
-    Esta é a versão original da dissertação/tese elaborada pelo\\
-    candidato (Nome Completo do Aluno), tal como \\
-    submetida à Comissão Julgadora.
+    This is the original version of the thesis written by the\\
+    candidate (Samuel Martins Barbosa Neto), as\\
+    submitted to the Judging Committee.
     \end{flushright}
 
 \pagebreak
 
 
-% ---------------------------------------------------------------------------- %
-% Página de rosto (Só PARA A VERSãO CORRIGIDA - APóS DEFESA)
-% Resolução CoPGr 5890 (20/12/2010)
+ %%---------------------------------------------------------------------------- %
+ %%Página de rosto (Só PARA A VERSãO CORRIGIDA - APóS DEFESA)
+ %%Resolução CoPGr 5890 (20/12/2010)
+%%
+ %%Nota: O título para as dissertações/teses do IME-USP devem caber em um 
+ %%orifício de 10,7cm de largura x 6,0cm de altura que há na capa fornecida pela SPG.
+%%
+ %%IMPORTANTE:
+   %%Coloque um '%' em todas as linhas desta
+   %%página antes de compilar a versão do trabalho que será entregue
+   %%à Comissão Julgadora antes da defesa
+%%
+%%
+%\newpage
+%\thispagestyle{empty}
+    %\begin{center}
+        %\vspace*{2.3 cm}
+        %\textbf{\Large{\phdTitle}}\\
+        %\vspace*{2 cm}
+    %\end{center}
 %
-% Nota: O título para as dissertações/teses do IME-USP devem caber em um 
-% orifício de 10,7cm de largura x 6,0cm de altura que há na capa fornecida pela SPG.
+    %\vskip 2cm
 %
-% IMPORTANTE:
-%   Coloque um '%' em todas as linhas desta
-%   página antes de compilar a versão do trabalho que será entregue
-%   à Comissão Julgadora antes da defesa
+    %\begin{flushright}
+    %This version of the thesis contains the corrections and suggestions given by\\
+    %the Judging Committee during the defense of the original vetsion of the work,\\
+    %that took place on \thesisMonth~\thesisDay, \thesisYear. A copy of the original version is available at the\\
+    %Institute of Mathematics and Statistics of the
+%University of São Paulo.
 %
+    %\vskip 2cm
 %
-\newpage
-\thispagestyle{empty}
-    \begin{center}
-        \vspace*{2.3 cm}
-        \textbf{\Large{Título do trabalho a ser apresentado à \\
-        CPG para a dissertação/tese}}\\
-        \vspace*{2 cm}
-    \end{center}
-
-    \vskip 2cm
-
-    \begin{flushright}
-    Esta versão da dissertação/tese contém as correções e alterações sugeridas\\
-    pela Comissão Julgadora durante a defesa da versão original do trabalho,\\
-    realizada em 14/12/2010. Uma cópia da versão original está disponível no\\
-    Instituto de Matemática e Estatística da Universidade de São Paulo.
-
-    \vskip 2cm
-
-    \end{flushright}
-    \vskip 4.2cm
-
-    \begin{quote}
-    \noindent Comissão Julgadora:
-    
-    \begin{itemize}
-        \item Prof\textordfeminine. Dr\textordfeminine. Nome Completo (orientadora) - IME-USP [sem ponto final]
-        \item Prof. Dr. Nome Completo - IME-USP [sem ponto final]
-        \item Prof. Dr. Nome Completo - IMPA [sem ponto final]
-    \end{itemize}
-      
-    \end{quote}
-\pagebreak
+    %\end{flushright}
+    %\vskip 4.2cm
+%
+    %\begin{quote}
+    %\noindent Judging Committee:
+    %
+    %\begin{itemize}
+        %\item Prof. Dr. Roberto Marcondes César Jr. --- IME-USP
+        %\item Dr. Cláudio Santos Pinhanez --- IBM Research Brazil
+        %\item Dr. Dan Cosley --- Cornell University
+    %\end{itemize}
+      %
+    %\end{quote}
+%\pagebreak
 
 
 \pagenumbering{roman}     % começamos a numerar 
@@ -234,7 +233,7 @@ framexrightmargin=10pt
 % ---------------------------------------------------------------------------- %
 % Agradecimentos:
 % Se o candidato não quer fazer agradecimentos, deve simplesmente eliminar esta página 
-\chapter*{Agradecimentos}
+\chapter*{Acknowledgements}
 Texto texto texto texto texto texto texto texto texto texto texto texto texto
 texto texto texto texto texto texto texto texto texto texto texto texto texto
 texto texto texto texto texto texto texto texto texto texto texto texto texto
@@ -245,10 +244,9 @@ texto texto texto texto. Texto opcional.
 % Resumo
 \chapter*{Resumo}
 
-\noindent SOBRENOME, A. B. C. \textbf{Título do trabalho em português}. 
-2010. 120 f.
-Tese (Doutorado) - Instituto de Matemática e Estatística,
-Universidade de São Paulo, São Paulo, 2010.
+\noindent \surnameAbbr \textbf{\phdTitleBr}. 
+\thesisYear. \thesisPages f. Tese (Doutorado) - Instituto de Matemática e Estatística,
+Universidade de São Paulo, São Paulo, \thesisYear.
 \\
 
 Elemento obrigatório, constituído de uma sequência de frases concisas e
@@ -274,10 +272,9 @@ texto texto.
 % ---------------------------------------------------------------------------- %
 % Abstract
 \chapter*{Abstract}
-\noindent SOBRENOME, A. B. C. \textbf{Título do trabalho em inglês}.
-2010. 120 f.
-Tese (Doutorado) - Instituto de Matemática e Estatística,
-Universidade de São Paulo, São Paulo, 2010.
+\noindent \surnameAbbr \textbf{\phdTitle}.
+\thesisYear. \thesisPages p. Thesis (Ph.D.) - Institute of Mathematics and Statistics,
+University of São Paulo, São Paulo, \thesisYear.
 \\
 
 
@@ -300,7 +297,7 @@ text text text.
 \tableofcontents    % imprime o sumário
 
 % ---------------------------------------------------------------------------- %
-\chapter{Lista de Abreviaturas}
+\chapter{List of Abbreviations}
 \begin{tabular}{ll}
          CFT         & Transformada contínua de Fourier (\emph{Continuous Fourier Transform})\\
          DFT         & Transformada discreta de Fourier (\emph{Discrete Fourier Transform})\\
@@ -309,7 +306,7 @@ text text text.
 \end{tabular}
 
 % ---------------------------------------------------------------------------- %
-\chapter{Lista de Símbolos}
+\chapter{List of Symbols}
 \begin{tabular}{ll}
         $\omega$    & Frequência angular\\
         $\psi$      & Função de análise \emph{wavelet}\\
@@ -332,14 +329,12 @@ text text text.
 %\onehalfspacing            % espaçamento um e meio
 \hypersetup{pageanchor=true}
 
-\input{macros}
 \input{figures/tex_vars}
 
 \input{introduction}
 \input{related}
 \input{reactions}
 \input{cohorts}
-\input{trajectories}
 \input{conclusion}
 
 % cabeçalho para os apêndices
