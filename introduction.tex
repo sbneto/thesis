@@ -1,23 +1,33 @@
 \chapter{Introduction}
 
-\section{Introduction esciece15}
+% Here I intent to say that we miss behavior and make mistakes when dealing with user data
+% Grab supporting research from both intros and maybe look for more
+% Add overview: Chapter for what we miss (escience2015) and Chapter for our mistakes (www2016)
+% Decide for an overall conclusion or a ``per chapter'' conclusion, with a smaller overall conclusion
+
+\section{Better Understanding Users' Behavior}
+
+Users' behavior span over a multitude of actions and change over time.
+
+Systems are not capable of capturing many of these users' behavior.
+
+Behavior evolution over time is important.
+
+In this work, we address the problem of missed reactions and how considering time is essential to not only reveal significant aspects of the users' behavior evolutions as well as avoiding drawing the wrong conclusions.
+
+\section{Users' Missed Reactions}
 
 Studies on social networks often use actions people take on other people's online content as evidence of social interactions for developing their models. In domains including Usenet \cite{Joyce2006}, Wikipedia \cite{Black2011}, and Facebook \cite{Gilbert2009}, explicit replies are interpreted as evidence of interpersonal interaction and social ties.  These explicit reactions are also used in studies of influence online, such as predicting when an item is likely to be forwarded in Twitter (e.g., \cite{Suh2010,Comarela2012}).
 
 Not all responses, however, are explicitly marked by the system.  For instance, a post that is explicitly threaded as a reply to a particular post in a discussion forum might nevertheless address another post or posts.  In Twitter, the primary focus of this paper, there are buttons for replying to and retweeting another user's tweet---but users might compose a new tweet that references another recently seen without hitting the reply button.  Users might do this for a variety of reasons, from being inspired to write their own post on a topic they see coming up in their feed to using the system in ways not intended by the designer (such as copying and pasting content into a new tweet rather than pressing a retweet button).  
 
 Being able to identify these non-obvious, indirect responses might allow researchers to have a more accurate view of social interaction than explicit mechanisms provide.  This might also improve overall estimates of users' responsiveness to others, for instance,
-%that might be useful for multiple tasks
-%This would be a measure of these users' personalities when exposed to content: users that react to many items in their feed would be interesting users to have when we think about spreading content.  Similarly, users that do not react to what they are exposed to have little value when spreading such content.  
-%Therefore, users could be thought as filters of content, varying from being sinks of information to reacting to everything they are exposed to. These estimates of responsiveness could be used at multiple levels.  
 at the individual level, they might indicate how desirable a user is as a follower: people might wish to have followers who are more likely to redistribute their content.  Aggregating responsiveness of a user's followers at the ego network level could support better estimates of an individual's potential reach or influence \cite{Domingos2001} based on the responsiveness of their followers.  Better responsiveness measures could also improve transmission probabilities in epidemiology-inspired models of diffusion in social networks \cite{Bakshy2012a}. 
 
 This paper assesses the prevalence of non-explicit responses in a dataset drawn from Twitter, using a measure of normalized textual similarity between a user's tweets and recent friends' tweets based on $tf\mhyphen idf$ scores.  Comparing this to the explicit responses provided by the system shows that explicit indicators of response (replies and retweets) in Twitter are in fact associated with high normalized similarity scores.  Choosing conservative score cutoffs for predicting that a tweet is a response and manually inspecting high-scoring tweets that are not marked as responses suggests that explicit indicators miss at least \highNonTaggedTweetCountPct{}\% of reactions. 
 Further, this varies between users: some users systematically fail to use formal response mechanisms, meaning that these users are under-represented in studies that rely on explicit indicators of response and under-counted when considering their potential as information spreaders. These results show that the problem of non-explicit responses is an important one with practical implications for understanding interaction and influence online.
 
-
-
-\section{Introduction www16}
+\section{Users' Hidden Behavior}
 
 Understanding the evolution of users in a social network is essential for a variety of tasks: monitoring community health, predicting individual user trajectories, and supporting effective recommendations, among others.  Many works aim at explaining these temporal aspects of evolution. Some adopt a point of view of the whole network and try to understand general patterns of behavior \cite{Zhu2014, Kooti2010}, while others adopt a user-centric point of view and try to model \cite{Correa2010, Priedhorsky2007, Panciera2009, Welser2011} or predict \cite{Danescu-niculescu-mizil2013} individuals' behavior.
 
@@ -33,3 +43,7 @@ We find that these accountings for time reveal insights about Reddit beyond what
 Further, we find that aggregate analysis can be downright misleading.  For instance, although average comment length decreases over time in an aggregate view, the comment length for surviving users increases over time in every cohort.  Likewise, an aggregate analysis suggests that longer-lived users post more over time; this is not the case.  Instead, users come into Reddit as active as they will ever be (akin to Panciera et al.'s finding that Wikipedians are ``born, not made'' \cite{Panciera2009}), and the rise in average activity for surviving users over time is driven by lower-activity users leaving early.
 
 We see this paper as both making specific contributions to understanding behavior in Reddit and a more general contribution around the importance of considering change over time in analyzing online communities. 
+
+\section{Organization of this Work}
+
+We dedicate 
