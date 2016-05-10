@@ -37,7 +37,7 @@ All of the above reasons suggest that users from different cohorts are likely to
 
 To address this hypothesis, we analyze both aggregate and cohort-based measures of user quality that are often raised about online communities: how active are users \cite{Scellato2011,Hughes2009,Java2007,Levy1984}, how much do they contribute \cite{Scellato2011,Gruhl2004,Guo2009}, and what kinds of work do they engage in \cite{Welser2011,Choi2010,Panciera2009}?  
 
-We do this in the context of Reddit, a community that has been studied by many researchers \cite{Gilbert2013,Stoddard2015,Bergstrom2011,Tan2015}. We begin with a brief overview of both Reddit and the dataset that we use in this paper, focusing on aspects that directly impact our analyses\footnote{There is more to say about Reddit itself (see \cite{AboutReddit}).}.
+We do this in the context of Reddit, a community that has been studied by many researchers \cite{Gilbert2013,Stoddard2015,Bergstrom2011,Tan2015}. We begin with a brief overview of both Reddit and the dataset that we use in this work, focusing on aspects that directly impact our analyses\footnote{There is more to say about Reddit itself (see \cite{AboutReddit}).}.
 
 \section{Data: Reddit as a community}
 
@@ -81,7 +81,7 @@ We focus on submissions and comments in the dataset because they have timestamps
 To analyze the data, we used Google BigQuery\cite{BigQuery}, a big data processing tool.
 Redditor \textit{fhoffa} imported the comments into BigQuery and made them publicly available\cite{RedditDataset2}.  We uploaded the submission data ourselves using Google's SDK.
 
-For the analysis in the paper, we did light preprocessing to filter out posts by deleted users, posts with no creation time, and posts by authors with bot-like names\footnote{Ending with ``\_bot'' or ``Bot''; or containing ``transcriber'' or ``automoderator''.}.
+For the analysis in the work, we did light preprocessing to filter out posts by deleted users, posts with no creation time, and posts by authors with bot-like names\footnote{Ending with ``\_bot'' or ``Bot''; or containing ``transcriber'' or ``automoderator''.}.
 %% DC 14: Would like to at least informally be able to address the critique that this doesn't capture all bot activity and excludes some legit users by giving a feel for the scope of the problem.
 
 We also considered only comment data from October 2007 until December 2014 in order to have a matching period for comments and submissions. After this process, we had a total of 1.17 billion comments and 114 million submissions.
@@ -93,7 +93,7 @@ Here we present an overview of the dataset that shows Reddit's overall growth.  
 %% Sam 8: There was a problem in my query for the active users, I was counting less than I should. I replaced the text with the right numbers, but they might not be considered ``and order of magnitude less'' now, more like 5x less
 However, as with many other online sites, most users \cite{Scellato2011,Hughes2009,Java2007} and communities \cite{Arguello2006} do not stay active. We define as an ``\textbf{active user}'' one that made at least one post in the month in question. Similarly, an ``\textbf{active subreddit}'' is one that received at least one post in the month. In December 2014, about 2.7 million users and 66 thousand subreddits were active, both around a fifth of the cumulative numbers. Figure~\ref{fig:cumulative}b shows the monthly number of active users and subreddits.
 
-Our interest in this paper is not so much whether users survive as it is about the behavior of active users.  Thus, 
+Our interest in this work is not so much whether users survive as it is about the behavior of active users.  Thus, 
 in general our analysis will look only at active users and subreddits in each month; those that are temporarily or permanently gone from Reddit are not included.  
 
 \subsection{Identifying cohorts}
@@ -106,7 +106,7 @@ in general our analysis will look only at active users and subreddits in each mo
 \label{fig:overall_posts}
 \end{figure*}
 
-We define the ``\textbf{user's creation time}'' as the time of the first post made by that user.  Throughout this paper, we will use the notion of user cohorts, which will consist of users created in the same calendar year.
+We define the ``\textbf{user's creation time}'' as the time of the first post made by that user.  Throughout this work, we will use the notion of user cohorts, which will consist of users created in the same calendar year.
 
 In many cases, we will look at the evolution of these cohorts. Since users can be created at any time during their cohort year, and our dataset ends in 2014, 
 we are likely to have a variation on the data available for each user of up to one year, even though they are in the same cohort.  To deal with this, some of our cohorted analyses will consider only the overlapping time window for which we collect data for all users in a cohort.   This means that we are normally not going to include the 2014 cohort in our analyses.
@@ -239,10 +239,10 @@ Without the decision to condition on cohorts, one would have gathered an entirel
 \centering
 \subimage[width=0.48, scale=0.42]{./images/comments_per_submissions_over_time_cohorts.eps}
 \subimage[width=0.48, scale=0.42]{./images/comments_per_submissions_cohorts.eps}
-\subimage[width=0.23, scale=0.23]{./images/comments_per_submissions_for_surviving_year_for_2008.eps}{2008 cohort}
-\subimage[width=0.23, scale=0.23]{./images/comments_per_submissions_for_surviving_year_for_2009.eps}{2009 cohort}
-\subimage[width=0.23, scale=0.23]{./images/comments_per_submissions_for_surviving_year_for_2010.eps}{2010 cohort}
-\subimage[width=0.23, scale=0.23]{./images/comments_per_submissions_for_surviving_year_for_2011.eps}{2011 cohort}
+\subimage[width=0.35, scale=0.30]{./images/comments_per_submissions_for_surviving_year_for_2008.eps}{2008 cohort}
+\subimage[width=0.35, scale=0.30]{./images/comments_per_submissions_for_surviving_year_for_2009.eps}{2009 cohort}
+\subimage[width=0.35, scale=0.30]{./images/comments_per_submissions_for_surviving_year_for_2010.eps}{2010 cohort}
+\subimage[width=0.35, scale=0.30]{./images/comments_per_submissions_for_surviving_year_for_2011.eps}{2011 cohort}
 \caption{Figure (a) shows the average comment per submission ratio over clock time for the cohorts and the overall average. Figure (b) shows the average comment per submission from the user-referential time for the cohorts. Figures (c), (d), (e) and (f), similarly to Figure~\ref{fig:avr_posts_per_user_for_surviving_year}, shows the 2008, 2009, 2010, and 2011 cohorts, segmented by the number of years a user in the cohort survived.  As with average posts per month, users who stay active longer appear to start their careers with a relatively higher comments per submission ratio than users who abandon Reddit sooner.  Unlike that analysis, however, the early 2008 cohort ends up below the later cohorts in Figure (b).}
 \label{fig:comments_submissions}
 \end{figure*}
@@ -273,4 +273,33 @@ Finally, this increase is most pronounced in the earlier cohorts of 2008 and 200
 %% Sam 11: I don't quite remember why we wrote this, is it right? I can't really see how this is true from the figures.
 %Still, the ratio for these earlier cohorts never rises to the level it does for surviving users from later cohorts. 
 
+\section{Discussion}
+
+In this section we discuss some of the processes that might explain our observations, and how they connect to other literature.  We're not arguing here that we know the answers; instead, we see these as interesting avenues for future work.
+
+\subsection{Why are newer ``active'' users less so?}
+
+We have seen that users from later cohorts have a lower posting average than in earlier cohorts. 
+One plausible explanation is that users self-select: users that find Reddit early in its life are also more likely than average to be those who will be attracted to it. Previous work has shown that online book reviews have a self-selection bias, where people who are more likely to like (or promote) the book review it earlier, leading to a positive early bias in an item's life \cite{Li2008}.  In Reddit's case, this would mean that the mixture of users joining in the early stage of the community would be disproportionately likely to be the most active ones and the latter ones are more likely to be less active; several of our results support this explanation.
+
+Another plausible hypothesis for later cohorts having a higher number of less active users could be that, over time, Reddit has accumulated an increasing number of valuable-but-small/niche communities.  The increased diversity might support a wider set of users in getting value, explaining the increased survival percentage.  The niche/smaller nature of newer communities might provide fewer opportunities to both submit and comment, explaining the lower average activity for surviving users. 
+
+A third hypothesis is that Reddit overall is becoming more about consumption and voting on content rather than producing it.  Older users with contribution norms continue to contribute; newer users tend to provide audiences and feedback.  High-resolution voting data could be a real boon in understanding if this is true.
+
+\subsection{Why are comments getting shorter?}
+
+We also observed that overall, comment lengths are getting shorter over time.  
+One hypothesis is that users' behavior is being shaped by an ``initial value problem''---that as users join the network, they tend to produce content according to the norms of what they see \cite{Kooti2010, Danescu-niculescu-mizil2013}. 
+Figure~\ref{fig:comment_length}a presents some support for this hypothesis: the initial month of each cohort year, which consists of data only from users who joined in that month, is quite close to the overall line from the prior month.  
+
+Another hypothesis advanced by community members\cite{RedditHypo1} is that Reddit's karma system favors shorter comments.  That is, people can get more upvotes for a given amount of effort by writing more, shorter comments.  This could be directly measured even with the available data, and might be the start of a very interesting line of future work around modeling strategic posting and attention distribution behavior in Reddit. 
+
+\subsection{Why do comments per submission increase?}
+
+We also saw that comments per submission increase over time for surviving users, especially for users who join earlier.
+
+One process hypothesis is that this is because early in Reddit's life, there simply weren't as many submissions to comment on, meaning that people who wanted to be active contributors more or less had to submit in order to do so. 
+As the community grew, more content became available to comment on; those comments in turn provide additional opportunities for commenting.  In this reading, the value and ease of commenting has increased over time, making it a more common behavior. 
+
+This question of ease and value might be more general, and tie to our observations about self-selection and karma accumulation.  Most users in social networks are known to be lurkers: seeking information and observing, rather than contributing content \cite{Rafaeli2004, Nonnecke2000}. Consumption in Reddit is valuable and easy, and some contributions are easier than others: reading is easier than voting; voting is easier than commenting; commenting is easier than submitting.  Only users for whom finding and submitting comments is relatively easy or relatively valuable are likely to be frequent submitters or ``power users'' \cite{Panciera2009, Kittur2007}. We suspect such users are more likely to be ones who found Reddit earlier, when it was relatively small, and stuck with it.
 
