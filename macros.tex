@@ -1,3 +1,17 @@
+\newcounter{rqcounter}[chapter]
+\setcounter{rqcounter}{0}
+\newcounter{subrqcounter}[rqcounter]
+\setcounter{subrqcounter}{0}
+\newcommand{\ResearchQuestion}{\refstepcounter{rqcounter}\textbf{Ch.\thechapter~RQ\arabic{rqcounter}}}
+\renewcommand{\therqcounter}{\textbf{Ch.\thechapter~RQ\arabic{rqcounter}}}
+\newcommand{\SubResearchQuestion}{\refstepcounter{subrqcounter}\textbf{Ch.\thechapter~RQ\arabic{rqcounter}\alph{subrqcounter}}}
+\renewcommand{\thesubrqcounter}{\textbf{Ch.\thechapter~RQ\arabic{rqcounter}\alph{subrqcounter}}}
+
+\newcounter{hypcounter}
+\setcounter{hypcounter}{0}
+\newcommand{\Hypothesis}{\refstepcounter{hypcounter}\textbf{Ch.\thechapter~H\arabic{hypcounter}}}
+\renewcommand{\thehypcounter}{\textbf{Ch.\thechapter~H\arabic{hypcounter}}}
+
 \newcommand{\thesisPages}{80}
 \newcommand{\thesisDay}{1st}
 \newcommand{\thesisMonth}{July}

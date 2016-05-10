@@ -1,5 +1,5 @@
 \chapter{Using Text Similarity to Detect Social Interactions not Captured by Formal Reply Mechanisms}
-\label{reactions}
+\label{ch:reactions}
 
 \section{Related Work}
 
@@ -98,10 +98,10 @@ This section presents the definition of the problem and the method used to attac
 
 When users decide to post a message in Twitter, they might be reacting to some content they saw from one of their followees. The first assumption is that the evidence for these reactions are the textual features in a given tweet by user $u$ and textual features in the set of recent tweets by $u$'s followees. Another assumption is that, if $u$ tweeted in reaction to a followee's message, there should be higher text similarity between that tweet and that message. This work focus on text features, rather than user or network characteristics found in prior work, because they have been shown to be useful while simplifying data collection, computation, and modeling.
 
-This leads to this work's first research question, about whether text similarity has potential for identifying non-explicit responses.
+This leads to this chapters's first research question (\ResearchQuestion\label{rq:similarityPotential}), about whether text similarity has potential for identifying non-explicit responses. 
 Do explicit responses in fact tend to have high text similarity? If so, what fraction of high-scoring tweets are non-explicit?  And, even when similarity is lower, when might non-explicit responses be present?
 
-The second research question asked is how these non-explicit responses are distributed among users.  Are many users ``invisible'' because, although they appear to be responsive based on scores, their responses are not explicit?  Why are they lost?  Are they naive or low-frequency users who do not know better than to retype or cut and paste or restate? And, is this likely to be important in estimating the overall responsiveness of users?
+The second research question (\ResearchQuestion\label{rq:usersDistribution}) asked is how these non-explicit responses are distributed among users.  Are many users ``invisible'' because, although they appear to be responsive based on scores, their responses are not explicit?  Why are they lost?  Are they naive or low-frequency users who do not know better than to retype or cut and paste or restate? And, is this likely to be important in estimating the overall responsiveness of users?
 
 \subsection{Influence Window}
 
@@ -252,7 +252,7 @@ Tagged tweets are defined as those indicated by the API as explicit responses, i
 
 \subsection{How prevalent are non-explicit responses?}
 
-This section addresses the first research question of whether or not text similarity has potential for identifying untagged responses, starting with whether Tagged reactions indeed tend to have higher scores than Non-Tagged ones. 
+This section addresses the first research question \ref{rq:similarityPotential} of whether or not text similarity has potential for identifying untagged responses, starting with whether Tagged reactions indeed tend to have higher scores than Non-Tagged ones. 
 
 \begin{table}[!tb]
 	\centering
@@ -323,7 +323,7 @@ Further, even the conservative estimate chosen shows that non-explicit responses
 
 \subsection{Variations in User Responsiveness}
 
-The previous sections demonstrate that it's likely that \highNonTaggedTweetCountPct{}\% or more of Non-Tagged tweets are responses that are not explicitly captured by the system.  This section addresses the other main research question of how these losses are distributed among different users in the network.   
+The previous sections demonstrate that it's likely that \highNonTaggedTweetCountPct{}\% or more of Non-Tagged tweets are responses that are not explicitly captured by the system.  This section addresses the other main research question \ref{rq:usersDistribution} of how these losses are distributed among different users in the network.   
 
 These Non-Tagged high-scored messages were authored by \highUserCount{} of the \totalUsers{} users (\highUserCountPct{}\%). This suggests that users generate responses that are missed in a non-uniform way: many users behave as the system expects, using explicit reply and retweet mechanisms, but a significant number respond, at least sometimes, without using those mechanisms. 
 Figure \ref{fig:users_reponse_histograms} shows histograms for example users that have most or all of their responses untagged by Twitter even though they present a high $score$.  Note that these users span a range of activity levels, meaning that they are not just newbies that don't know how to use the interface.
