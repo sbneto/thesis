@@ -280,8 +280,7 @@ This section addresses the first research question \ref{rq:similarityPotential} 
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[scale=1]{./figures/all_tfidf_histogram.eps}
-%\includegraphics{./figures/all_tfidf_histogram_cutoff_y.eps}
+\includegraphics{./figures/all_tfidf_histogram.eps}
 \includegraphics{./figures/replies_tfidf_histogram.eps}
 \includegraphics{./figures/retweets_tfidf_histogram.eps}
 \includegraphics{./figures/not_retweets_replies_tfidf_histogram_cutoff_y.eps}
@@ -337,18 +336,16 @@ The previous sections demonstrate that it's likely that \highNonTaggedTweetCount
 
 These Non-Tagged high-scored messages were authored by \highUserCount{} of the \totalUsers{} users (\highUserCountPct{}\%). This suggests that users generate responses that are missed in a non-uniform way: many users behave as the system expects, using explicit reply and retweet mechanisms, but a significant number respond, at least sometimes, without using those mechanisms. 
 Figure \ref{fig:users_reponse_histograms} shows histograms for example users that have most or all of their responses untagged by Twitter even though they present a high $score$.  Note that these users span a range of activity levels, meaning that they are not just newbies that don't know how to use the interface.
-%It is possible to see that some of these users present a high activity on Twitter, posting hundreds of messages in the 14-days window considered in this work. The behavior of high activity users such as these is lost when considering only explicit system-tagged reactions. Also, it is unlikely that such users are unaware that the Reply and Retweet mechanisms exist on Twitter, suggesting that this behavior is characteristic of these users, and not only the naive usage of the system.
 
 \begin{figure}[!tb]
 \centering
-\includegraphics[scale=0.55]{./figures/213501392_histogram.eps}
-\includegraphics[scale=0.55]{./figures/808181892_histogram.eps}
-\includegraphics[scale=0.55]{./figures/87339782_histogram.eps}
-\includegraphics[scale=0.55]{./figures/196322186_histogram.eps}
+\includegraphics[scale=0.75]{./figures/213501392_histogram.eps}
+\includegraphics[scale=0.75]{./figures/808181892_histogram.eps}
+\includegraphics[scale=0.75]{./figures/87339782_histogram.eps}
+\includegraphics[scale=0.75]{./figures/196322186_histogram.eps}
 \caption{Score histograms for sample users who present a significant amount of high scored Non-Tagged content relative to their total amount of messages, which indicates that most of their reactions are not being properly tagged by Twitter.}
 \label{fig:users_reponse_histograms}
 \end{figure}
-%% DC 24: Thanks for making the x axes comparable in each row (which I realize looks a little weird for the 6-tweet user).  It's interesting just how much the upper right one looks like the total distribution of scores...
 
 
 In order to better understand the behavior distribution among all users, Figure \ref{fig:2d_histogram} shows a 2d-histogram for the points $(p_i^T, p_i^N)$, where each of these points is the percentage of the Tagged messages $p_i^T$ and the percentage of the high scored Non-Tagged messages $p_i^N$.  Each of these points is evaluated for a user $u_i$ in relation to the total number of messages the user authored.
