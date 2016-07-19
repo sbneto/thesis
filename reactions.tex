@@ -376,3 +376,8 @@ When considering the cumulative distribution of the users according to the perce
 
 These results indicate that methods that rely on explicit indicators of response likely miss or seriously under-represent the behavior of a sizable proportion of the Twitter population.
 
+\section{Contributions}
+
+This chapter presented a novel method for user's non-explicit reactions to followees' content detection in Twitter. It is based on text similarity scores between a user's tweets and those of their followees \cite{Barbosa}.  Our method generates higher scores on average for system tagged Replies and Retweets than Non-Tagged tweets, suggesting that our text similarity scores have the potential to identify users' reactions as stated in our first research question \ref{rq:similarityPotential}.  
+
+When using a conservative cutoff to detect non-tagged reactions, our results indicate that at least \highNonTaggedTweetCountPct{}\% of users' reactions are not tagged by the system.  Considering our second research question \ref{rq:usersDistribution}, almost a quarter of the users in our dataset presented non-tagged reactions. Furthermore, among these users we have another quarter of them exhibiting more missed reactions than explicit system tagged ones. These users have a wide range of activity level, with dozens or hundreds of tweets in a 14-day window, meaning that they are not just naive, low-activity users who do not understand Twitter.
