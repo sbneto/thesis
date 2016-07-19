@@ -7,19 +7,21 @@
 
 \section{Better Understanding Users' Behavior}
 
-Users' behavior span over a multitude of actions on social networks \cite{Benevenuto2009, Gilbert2009, Comarela2012}: they search for friends, write messages, post images, videos and sounds among many other possibilities. Much of this content is captured by social networks mechanisms that explicitly tag and identify characteristics of the users' interaction. These mechanisms, however, are limited in capturing users' intention and diverse behavior, for instance, researchers have found that users might use references to content that only a specific audience from their peers can understand, turning a common context into a tool of privacy in public contexts \cite{Boyd2011}. The problem of identifying part of these interactions that are not fully captured is important to better understand users as well as to provide new perspectives on what kind of features social networks should provide.
+Users' behavior span over a multitude of actions on social networks \cite{Benevenuto2009, Gilbert2009, Comarela2012}: they search for friends, write messages, post images, videos and sounds among many other possibilities. Much of this content is captured by social networks mechanisms that explicitly tag and identify characteristics of the users' interaction. These mechanisms, however, are limited in capturing users' intention and diverse behavior. For instance, researchers have found that users might use references to content that only a specific audience from their peers can understand, turning a common context into a tool of privacy in public contexts \cite{Boyd2011}. The problem of identifying part of these interactions that are not fully captured is important to better understand users as well as to provide new perspectives on what kind of features social networks should provide. This is the main issue addressed in this thesis.
 
-Research has shown that not accounting for time can lead to mistakes when dealing with social networks. Just as with offline contexts, systems ans society changes over the years, as well younger generations have a different behavior from older generations. More than just considering different snapshots over time, we analyze users that joined at different stages of the network evolution. Just as with missed reactions, considering time-evolving users is important to reveal behavior that otherwise would not be noticed. Using simple cohorting methods, we demonstrate how different this behavior can be and how easy is to draw wrong conclusions from averaging practices.
+Research has shown that not accounting for time can lead to mistakes when dealing with social networks. Just as with offline contexts, systems and society changes over the years, as well younger generations have a different behavior from older generations. More than just considering different snapshots over time, we analyze users that joined at different stages of the network evolution. Just as with missed reactions, considering time-evolving users is important to reveal behavior that otherwise would not be noticed. Using simple cohorting methods, we demonstrate how different this behavior can be and how easy is to draw wrong conclusions from averaging practices.
 
-In the first part of this work, we address the problem of missed reactions, proposing a text similarity method to identify missed reactions and validating it on Twitter data. We show that a considerable number of users' reactions are not captured by current mechanisms in Twitter and that some types of users are significantly underrepresented based solely on these metrics. In the second part of this work, we analyze the users' evolution from a cohort perspective built on top of the time that they joined the network. We show, in the context of Reddit, how users' behavior vary depending on the year that they joined the network as well as how misleading not accounting for time can be. 
+In the first part of this thesis, we address the problem of missed reactions, proposing a text similarity method to identify missed reactions and validating it on Twitter data. We show that a considerable number of users' reactions are not captured by current mechanisms in Twitter and that some types of users are significantly underrepresented based solely on these metrics. In the second part of this thesis, we analyze the users' evolution from a cohort perspective built on top of the time that they joined the network. We show, in the context of Reddit, how users' behavior vary depending on the year that they joined the network as well as how misleading not accounting for time can be. 
+
+This thesis was made in collaboration with IBM Reseach Brazil and Cornell University. The author interned at IBM Research for 2 years under the advisorship of Claudio Pinhanez and visited Cornell University for 1 year as part of the sandwich Ph.D. program, under the advisorship of Dan Cosley.
 
 \section{Objectives}
 
-The objective of this work is to improve our understanding of users' behavior on social networks. More specifically, understand the missed behavior in the form of reactions that are not captured and temporal trends that are missed due to poor aggregation of data. We aim at developing methods that help us to capture and identify missed reactions and propose analysis tools that allow us to avoid misunderstanding our data.
+The objective of this thesis is to study and propose new methods to improve our understanding of users' behavior on social networks. More specifically, to understand the missed behavior in the form of reactions that are not captured and temporal trends that are missed due to poor aggregation of data. We aim at developing methods that help us to capture and identify missed reactions and propose analysis tools that allow us to avoid misunderstanding our data.
 
 \section{Contributions}
 
-We can summarize the contributions of this work as the following:
+We can summarize the contributions of this thesis as the following:
 
 \begin{itemize}
 	\item Proposal of the problem of studying users' indirect reactions.
@@ -28,11 +30,12 @@ We can summarize the contributions of this work as the following:
 	\item Practical examples of common aggregation practices that lead to wrong conclusions when dealing with time series.
 \end{itemize}
 
+The ideas proposed in this thesis have been published in \cite{BarbosaNeto2013, Barbosa, Barbosa2016}.
 
-\section{Organization of this Work}
+\section{Organization of this Thesis}
 
-We dedicate Chapter \ref{ch:reactions} of this work to the problem of detecting missed reaction. We propose a simple method based on text similarity to detect reactions other than retweets and replies in Twitter, and we show that a significant amount of reactions are being missed. Not only that, we also show that many users consistently react in ways that are not captured by these mechanisms.
+We dedicate Chapter \ref{ch:reactions} of this thesis to the problem of detecting missed reaction. We propose a method based on text similarity to detect reactions other than retweets and replies in Twitter. We show that a significant amount of reactions are being missed. Furthermore, we show that many users consistently react in ways that are not captured by these mechanisms.
 
-In Chapter \ref{ch:cohorts}, we cohort users in Reddit based on their creation and survival years and we show how naive aggregation of data can lead to wrong conclusions. More than that, these simple methods can reveal evolution trends that would be otherwise missed, and they highlight the significant role of users joining and leaving the network in shaping the overall behavior.
+In Chapter \ref{ch:cohorts}, we cohort users in Reddit based on their creation and survival years. This analysis shows that naive aggregation of data can lead to wrong conclusions. It is shown that the proposed method can reveal users' evolution trends that would be otherwise missed. The proposed approach highlights the significant role of users joining and leaving the network in shaping the overall behavior.
 
 Finally, in Chapter \ref{ch:conclusions}, we discuss and summarize our findings, also providing a discussion of their impacts and possible future venues of research to pursue.
