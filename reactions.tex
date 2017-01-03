@@ -221,7 +221,11 @@ score(t_i) =  \max_{ft_j \in w_i}\frac{pairScore(t_i,ft_j)}{normalization(w_i)}
 \label{eq:finalScore}
 \end{equation}
 
-The interpretation of the $score(t_i)$ is how likely $t_i$ is to be a response to a friend's tweet $ft = argmax_{ft' \in w_i}(pairScore(t_i,ft'))$ given the window $w_i$. It is important to notice that \textbf{this is not a pairwise tweet similarity}, but a \textbf{tweet-window similarity}, meaning that the similarity of one particular tweet in the window with $t_i$ might changing depending on the other tweets that are present in the window. This is a result of using tf-idf scoring and our normalization approach. 
+The interpretation of the $score(t_i)$ is how likely $t_i$ is to be a response to a friend's tweet $ft = argmax_{ft' \in w_i}(pairScore(t_i,ft'))$ given the window $w_i$. It is important to notice that \textbf{this is not a pairwise tweet similarity}, but a \textbf{tweet-window similarity}, meaning that the similarity of one particular tweet in the window with $t_i$ might change depending on which other tweets are present in the window. This is a consequence of using tf-idf scoring and our normalization approach. 
+
+\subsection{A qualitative understanding of the score method}
+
+In order to better understand our normalization technique, let's consider that we have a single window that contains two tweets, as in Table \ref{tab:windowExample}. In this case, if a user were to retweet tweet #1, he would get a final score of $0.333$, since this is not the maximum possible tf-idf score in the window. On the other hand, if a user were to retweet tweet #2, his score would be $1$. That is because it is the maximum possible score in the window. If you have fewer words, it is more likely that they are present in other window tweets just by chance, and it is a weaker signal than finding a longer sequence of matching words. In other words, a high score would have a good precision in identifying tweets, but not necessarily a high recall. Showing that we can identify implicit reactions with a high precision method, even though it does not have an ideal recall, is enough for the proposed research questions in this work.
 
 \begin{table}[!tbh]
 	\fontsize{9pt}{10pt}\selectfont
@@ -235,8 +239,6 @@ The interpretation of the $score(t_i)$ is how likely $t_i$ is to be a response t
 		\caption{Example of window. We do not consider stop words to calculate the tf-idf matrix.}
 	\label{tab:windowExample}
 \end{table}
-
-In order to better understand our normalization technique, let's consider that we have a single window that contains two tweets, as in Table \ref{tab:windowExample}. In this case, if a user were to retweet tweet #1, he would get a final score of $0.333$, since this is not the maximum possible tf-idf score in the window. On the other hand, if a user were to retweet tweet #2, his score would be $1$. That is because it is the maximum possible score in the window. If you have fewer words, it is more likely that they are present in other window tweets just by chance, and it is a weaker signal than finding a longer sequence of matching words. In other words, a high score would have a good precision in identifying tweets, but not necessarily a high recall. Showing that we can identify implicit reactions with a high precision method, even though it does not have an ideal recall, is enough for the proposed research questions in this work.
 
 \section{Results}
 
@@ -394,8 +396,20 @@ When considering the cumulative distribution of the users according to the perce
 
 These results indicate that methods that rely on explicit indicators of response likely miss or seriously under-represent the behavior of a sizable proportion of the Twitter population.
 
+
+\subsection{Manual Retweeting}
+
+A significant number of high scored messages identified by our method were actual retweets that were not tagged by the system, meaning that users actually copied and pasted the original tweet in order to produce these particular retweets (often adding extra comments of their own). This is actually a common practice advised by online marketeers to increase reach and visibility of one's retweets \cite{ManualRetweet1, ManualRetweet2, ManualRetweet3}. Their main arguments is that the built-in retweets suffer a series of shortcomings: they lack the possibility of being edited by the retweeting user, followers can set their feed to filter out built-in retweets, trackings for the link interactions for a built-in retweet are attributed to the original post link only, lack of information about who retweeted, since it shows more information about the original poster. These issues might be reason enough to explain why we see more than \usersMoreThanTenPctPct{}\% of users putting on the extra effort of manually coping and pasting, as well as editing the original message, in order to avoid these shortcomings of the built-in retweets.
+
 \section{Contributions}
 
 This chapter presented a novel method for user's non-explicit reactions to followees' content detection in Twitter. It is based on text similarity scores between a user's tweets and those of their followees \cite{Barbosa}.  Our method generates higher scores on average for system tagged Replies and Retweets than Non-Tagged tweets, suggesting that our text similarity scores have the potential to identify users' reactions as stated in our first research question \ref{rq:similarityPotential}.  
 
 When using a conservative cutoff to detect non-tagged reactions, our results indicate that at least \highNonTaggedTweetCountPct{}\% of users' reactions are not tagged by the system.  Considering our second research question \ref{rq:usersDistribution}, almost a quarter of the users in our dataset presented non-tagged reactions. Furthermore, among these users we have another quarter of them exhibiting more missed reactions than explicit system tagged ones. These users have a wide range of activity level, with dozens or hundreds of tweets in a 14-day window, meaning that they are not just naive, low-activity users who do not understand Twitter.
+
+\subsection{Limitations and future work}
+
+The pattern of behavior of each individual is taken into account in this work when we consider each users' ego-network for our model. However, we modeled reactions in a broad meaning: users could be reacting to each other, or reacting to a common external event or even just posting the same thing by coincidence. While all these effects are interesting and we would like to be able to distinguish users in these dimensions -- users that have a high reaction rate to other users might be interesting as followers, while users that are prone to react to certain external events might be interesting as a target audience for these events, while users that just happen to post the same things might be clustered together for marketing campaigns -- our method as designed does not account for these differences. Once we detect a reaction, we could further refine it in these dimensions and have a more fine grained model of each user. This would be a natural development of this model.
+
+Another important aspect that we did not consider here is that text is not everything. Nowadays more than ever, images and videos are commonly used in social networks posts and they carry a significant amount of information. Mapping and understanding how users react to this content could improve our method, and researchers such as Cavalin et al. \cite{Cavalin2016} have been working in tools to better aggregate and understand Twitter posts that contain images.
+
