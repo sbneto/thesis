@@ -90,7 +90,7 @@ We choose Reddit as our target community for a number of reasons.  It has existe
 \subimage[width=0.48, scale=0.40]{./images/cumulative_subreddits_linear.eps}
 \subimage[width=0.48, scale=0.40]{./images/active_users_linear.eps}
 \subimage[width=0.48, scale=0.40]{./images/active_subreddits_linear.eps}
-\caption{These curves are the same as the ones in Figure~\ref{fig:cumulative}, but with the x axis in linear scale to highlight the exponential growth of reddit. Figure (a) is the cumulative number of users, (b) the cumulative number of subreddits, (c) the number of active users and (d) the number of active subreddits.}
+\caption{\color{red}These curves are the same as the ones in Figure~\ref{fig:cumulative}, but with the x axis in linear scale to highlight the exponential growth of reddit. Figure (a) is the cumulative number of users, (b) the cumulative number of subreddits, (c) the number of active users and (d) the number of active subreddits.\color{black}}
 \label{fig:cumulative_linear}
 \end{figure*}
 
@@ -114,8 +114,9 @@ We also considered only comment data from October 2007 until December 2014 in or
 
 Here we present an overview of the dataset that shows Reddit's overall growth.  Figure~\ref{fig:cumulative}a presents the cumulative number of user accounts and subreddits created as of the last day of every month. After an initial extremely rapid expansion from 2008--2009, the number of users and subreddits have grown exponentially.  As of the end of 2014, about 16.2 million distinct users and 327 thousand subreddits made/received at least one post based on our data.
 
-%% Sam 8: There was a problem in my query for the active users, I was counting less than I should. I replaced the text with the right numbers, but they might not be considered ``and order of magnitude less'' now, more like 5x less
+\color{red}
 However, as with many other online sites, most users \cite{Scellato2011,Hughes2009,Java2007} and communities \cite{Arguello2006} do not stay active. We define as an ``\textbf{active user}'' one that made at least one post in the month in question. Similarly, an ``\textbf{active subreddit}'' is one that received at least one post in the month. In December 2014, about 2.7 million users and 66 thousand subreddits were active, both around a fifth of the cumulative numbers. Figure~\ref{fig:cumulative}b shows the monthly number of active users and subreddits. In order to highlight the exponential growth of Reddit, Figure~\ref{fig:cumulative_linear} shows the same curves as Figure~\ref{fig:cumulative}, but in linear scale.
+\color{black}
 
 Our interest in this work is not so much whether users survive as it is about the behavior of active users.  Thus, 
 in general our analysis will look only at active users and subreddits in each month; those that are temporarily or permanently gone from Reddit are not included.  
@@ -298,29 +299,29 @@ Finally, this increase is most pronounced in the earlier cohorts of 2008 and 200
 %Still, the ratio for these earlier cohorts never rises to the level it does for surviving users from later cohorts. 
 
 \section{Discussion and Future Work}
-
+\color{red}
 Our work highlight how common measures of activity and effort adopted by the research community can be misleading if it does not take into consideration the temporal evolution of the network. Other measures could be used, for instance, reddit has upvotes and downvotes, as well as a feature to give ``gold''. While we investigated these measures, our approach focused in examples that clearly showed counter intuitive results (particularly the ones related to the Simpson's paradox). While other metrics can be studied all by themselves, the metrics we chose were the correct ones to show the desired effects: how changes in users' behavior over time can be hidden or misinterpreted when taken as an aggregate. They allowed us to answer our research questions, which we summarize below.
 
 \begin{itemize}
 	\item \ref{rq:activityChange}: \textbf{How does the amount of users' activity change over time?}
 	\begin{itemize}
-		\item Low activity users are die sooner than high activity users. At the same time, the activity level is lower for newer cohorts than for older ones. This suggests that low-activity users from later cohorts tend to survive longer than those from earlier cohorts.  That is, people joining later in the community's life are less likely to be either committed users or leave than those from earlier on: they are more likely to be ``casual'' users that stick around.
+		\item \color{red}Low activity users are die sooner than high activity users. At the same time, the activity level is lower for newer cohorts than for older ones. This suggests that low-activity users from later cohorts tend to survive longer than those from earlier cohorts.  That is, people joining later in the community's life are less likely to be either committed users or leave than those from earlier on: they are more likely to be ``casual'' users that stick around.
 
 		\item \ref{srq:newFollowOld}: \textbf{Does new users eventually reach the higher level of activity of older users?}
 		\begin{itemize}
-			\item Users from later cohorts appear to level off at significantly lower posting averages than users from earlier ones, suggesting that newer users likely will never be as active as older ones on average.
+			\item \color{red}Users from later cohorts appear to level off at significantly lower posting averages than users from earlier ones, suggesting that newer users likely will never be as active as older ones on average.
 	\end{itemize}
 	\end{itemize}
-	\item \ref{rq:commentLengthOverTime}: \textbf{How does comment length change in the community over time, both overall and by cohort?}
+	\item \color{red}\ref{rq:commentLengthOverTime}: \textbf{How does comment length change in the community over time, both overall and by cohort?}
 	\begin{itemize}
-		\item Comment does increase inside of each cohort, no matter how long the user survives. Users that make longer comments inside of each cohort die faster. However, the community-wide comment length decreases over time. This is due to the exponential influx of new users that start from a lower baseline of comment length in reddit, being an example of the Simpson's paradox.
+		\item \color{red}Comment does increase inside of each cohort, no matter how long the user survives. Users that make longer comments inside of each cohort die faster. However, the community-wide comment length decreases over time. This is due to the exponential influx of new users that start from a lower baseline of comment length in reddit, being an example of the Simpson's paradox.
 	\end{itemize}
-	\item \ref{rq:typeOfActivity}: \textbf{How do users' activities change in the community over time, both overall and by cohort?}
+	\item \color{red}\ref{rq:typeOfActivity}: \textbf{How do users' activities change in the community over time, both overall and by cohort?}
 	\begin{itemize}
-		\item Average comments per submission seem to be a good predictor of user survival in the community, as long-lived users start from a higher baseline in comparison to short-lived ones. Also, in every cohort, users increase their comment-to-submission ratio as they survive. As the total number of posts stays steady, this suggests that users substitute making their own submissions for commenting.
+		\item \color{red}Average comments per submission seem to be a good predictor of user survival in the community, as long-lived users start from a higher baseline in comparison to short-lived ones. Also, in every cohort, users increase their comment-to-submission ratio as they survive. As the total number of posts stays steady, this suggests that users substitute making their own submissions for commenting.
 	\end{itemize}
 \end{itemize}
-
+\color{black}
 In this section we discuss some of the processes that might explain our observations, and how they connect to other literature.  We're not arguing here that we know the answers; instead, we see these as interesting avenues for future work.
 
 \subsection{Why are newer ``active'' users less so?}
