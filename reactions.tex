@@ -8,11 +8,9 @@ Not all responses, however, are explicitly marked by the system.  For instance, 
 Being able to identify these non-obvious, indirect responses might allow researchers to have a more accurate view of social interaction than explicit mechanisms provide.  This might also improve overall estimates of users' responsiveness to others, for instance,
 at the individual level, they might indicate how desirable a user is as a follower: people might wish to have followers who are more likely to redistribute their content.  Aggregating responsiveness of a user's followers at the ego network level could support better estimates of an individual's potential reach or influence \cite{Domingos2001} based on the responsiveness of their followers.  Better responsiveness measures could also improve transmission probabilities in epidemiology-inspired models of diffusion in social networks \cite{Bakshy2012a}. 
 
-\color{red}
 This chapter assesses the prevalence of non-explicit responses in a dataset drawn from Twitter \cite{BarbosaNeto2013, Barbosa}. It is proposed a measure of normalized textual similarity between a user's tweets and recent friends' tweets based on $tf\mhyphen idf$ scores.  Comparing this to the explicit responses provided by the system shows that explicit indicators of response (replies and retweets) in Twitter are in fact associated with high normalized similarity scores.  Choosing conservative score cutoffs for predicting that a tweet is a response and manually inspecting high-scoring tweets that are not marked as responses suggests that explicit indicators miss at least \highNonTaggedTweetCountPct{}\% of reactions. 
 Furthermore, this varies between users: some users systematically fail to use formal response mechanisms, meaning that these users are under-represented in studies that rely on explicit indicators of response and under-counted when considering their potential as information spreaders. These results show that the problem of non-explicit responses is an important one with practical implications for understanding interaction and influence online. 
 Later work \cite{taxidou2016} studies a similar problem of identifying implicit responses from a provenance point of view. It uses a similar tf-idf method \cite{de2015}, although considering a more holistic approach in contrast with a ego-network, user-centered approach. We discuss the similarities and the results of both methods.
-\color{black}
 
 
 \section{Related Work}
@@ -225,7 +223,6 @@ score(t_i) =  \max_{ft_j \in w_i}\frac{pairScore(t_i,ft_j)}{normalization(w_i)}
 \label{eq:finalScore}
 \end{equation}
 
-\color{red}
 The interpretation of the $score(t_i)$ is how likely $t_i$ is to be a response to a friend's tweet $ft = argmax_{ft' \in w_i}(pairScore(t_i,ft'))$ given the window $w_i$. It is important to notice that \textbf{this is not a pairwise tweet similarity}, but a \textbf{tweet-window similarity}, meaning that the similarity of one particular tweet in the window with $t_i$ might change depending on which other tweets are present in the window. This is a consequence of using tf-idf scoring and our normalization approach. 
 
 \subsection{A Qualitative Understanding of the Score Method}
@@ -241,10 +238,9 @@ In order to better understand our normalization technique, let's consider that w
 			1 & \verb!Nice Work!! & 0.301 & 0.333 \\ \hline
 			2 & \verb!This is a nice day to walk in the park.! & 0.903 & 1.0 \\ \hline
 		\end{tabular}
-		\caption{\color{red}Example of window. We do not consider stop words to calculate the tf-idf matrix.}
+		\caption{Example of window. We do not consider stop words to calculate the tf-idf matrix.}
 	\label{tab:windowExample}
 \end{table}
-\color{black}
 
 \section{Results}
 
@@ -401,9 +397,7 @@ These results indicate that methods that rely on explicit indicators of response
 
 \subsection{Manual Retweeting}
 
-\color{red}
 A significant number of high scored messages identified by our method were actual retweets that were not tagged by the system, meaning that users actually copied and pasted the original tweet in order to produce these particular retweets (often adding extra comments of their own). This is actually a common practice advised by online marketeers to increase reach and visibility of one's retweets \cite{ManualRetweet1, ManualRetweet2, ManualRetweet3}. Their main arguments is that the built-in retweets suffer a series of shortcomings: they lack the possibility of being edited by the retweeting user, followers can set their feed to filter out built-in retweets, trackings for the link interactions for a built-in retweet are attributed to the original post link only, lack of information about who retweeted, since it shows more information about the original poster. These issues might be reason enough to explain why we see more than \usersMoreThanTenPctPct{}\% of users putting on the extra effort of manually coping and pasting, as well as editing the original message, in order to avoid these shortcomings of the built-in retweets.
-
 
 \subsection{Implicit Response Detection Through Provenance}
 
@@ -415,7 +409,6 @@ When comparing our results, we should bear in mind that there are limitations to
 
 Regardless of these limitations, the fact that the underlying method uses tf-idf to evaluate similarity over tweets and identifies implicit reactions allow us to compare results. In our method, we identified \highNonTaggedTweetCountPct{}\% of the Non-Tagged tweets as possible reactions in comparison with the Tagged ones, opposed to 8.1\% using their method. We can attribute this difference to the fact that our model takes into consideration a more specific baseline of comparison, since we calculate new tf-idf scores for each ego-network. Also, we used a different threshold for our score, which could yield these differences. Nevertheless, their results are in line with our first research question \ref{rq:similarityPotential}. It supports the claim that text similarity has the potential to detect implicit responses and presents estimates for theses numbers that are within the same order of magnitude of our results.
 
-\color{black}
 
 \section{Contributions}
 
@@ -423,11 +416,9 @@ This chapter presented a novel method for user's non-explicit reactions to follo
 
 When using a conservative cutoff to detect non-tagged reactions, our results indicate that at least \highNonTaggedTweetCountPct{}\% of users' reactions are not tagged by the system.  Considering our second research question \ref{rq:usersDistribution}, almost a quarter of the users in our dataset presented non-tagged reactions. Furthermore, among these users we have another quarter of them exhibiting more missed reactions than explicit system tagged ones. These users have a wide range of activity level, with dozens or hundreds of tweets in a 14-day window, meaning that they are not just naive, low-activity users who do not understand Twitter.
 
-\color{red}
 \subsection{Limitations and future work}
 
 The pattern of behavior of each individual is taken into account in this work when we consider each users' ego-network for our model. However, we modeled reactions in a broad meaning: users could be reacting to each other, or reacting to a common external event or even just posting the same thing by coincidence. While all these effects are interesting and we would like to be able to distinguish users in these dimensions -- users that have a high reaction rate to other users might be interesting as followers, while users that are prone to react to certain external events might be interesting as a target audience for these events, while users that just happen to post the same things might be clustered together for marketing campaigns -- our method as designed does not account for these differences. Once we detect a reaction, we could further refine it in these dimensions and have a more fine grained model of each user. This would be a natural development of this model.
 
 Another important aspect that we did not consider here is that text is not everything. Nowadays more than ever, images and videos are commonly used in social networks posts and they carry a significant amount of information. Mapping and understanding how users react to this content could improve our method, and researchers such as Cavalin et al. \cite{Cavalin2016} have been working in tools to better aggregate and understand Twitter posts that contain images.
-\color{black}
 
