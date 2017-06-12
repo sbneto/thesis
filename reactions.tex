@@ -183,10 +183,15 @@ Tweets are first preprocessed using Python's NLTK package \cite{Bird2009} to be 
 \end{figure}
 
 The text similarity metric used for this task was the $tf\mhyphen idf$ scoring. It is a proven technique for information retrieval commonly employed in analyzing Twitter data. 
-$tf\mhyphen idf$ stands for term frequency and inverse document frequency. This method takes as input a set of documents $D$, where each $document$ is a set of $terms$, and produces a document-by-term matrix of $tf\mhyphen idf$ scores. These functions can be scaled, but usually the $tf$ is not scaled and the $idf$ is logarithmically scaled. For a given $(document,term)$ matrix entry, the $tf$ function is the $term$ occurrence count in the $document$ and the $idf$ function is given by Equation \ref{eq:idf}.
+$tf\mhyphen idf$ stands for term frequency and inverse document frequency. This method takes as input a set of documents $D$, where each $document$ is a set of $terms$, and produces a document-by-term matrix of $tf\mhyphen idf$ scores. These functions can be scaled, but usually the $tf$ is not scaled and the $idf$ is logarithmically scaled. For a given $(document,term)$ matrix entry, the $tf$ function is the $term$ occurrence count in the $document$, as in \ref{eq:tf}, and the $idf$ function is given by Equation \ref{eq:idf}.
 
 \begin{equation}
-idf(D,term) = \log \frac{|D|}{|\left\{d \in D | term \in d\right\}|}
+tf(d,term) = \frac{|\left\{w| w \in d, w = term\right\}|}{|d|}
+\label{eq:tf}
+\end{equation}
+
+\begin{equation}
+idf(D,term) = \log \frac{|D|}{|\left\{d| d \in D, term \in d\right\}|}
 \label{eq:idf}
 \end{equation}
 
