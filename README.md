@@ -1,8 +1,8 @@
 defesa do Samuel - 20170529
 
 ### Correcoes de Forma
-
-	- a capa está errada com a data de defesa e depósito, a lista de abreviações tem definições, referências bibliográficas precisam ser padronizadas, nossos nomes (Cesar sem acento, Claudio).
+	
+	(OK) - a capa está errada com a data de defesa e depósito, a lista de abreviações tem definições, referências bibliográficas precisam ser padronizadas, nossos nomes (Cesar sem acento, Claudio).
 	Erro no nome do Claudio e no meu
 
 	- formato de coleção de artigos: deixar no começo de cada capítulo que o conteúdo vem do artigo correspondente. footnote no início de cada capítulo.
