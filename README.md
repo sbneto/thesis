@@ -9,6 +9,7 @@ Existe alguma coisa muito diferente do texto original? Em relação aos papers. Se
 refazer a conclusão para não deixar parte do texto de nenhum artigo. tirar o termo ongoing work.
 - (OK) trazer o apêndice para o cap 2, contextualizar. +extra: arrumar titulos das tabelas
 - (OK) Não deveria deixar nome de usuário aparececendo.
+- (OK) extra: Modificacoes para deposito no comeco da tese, banca de defesa
 - lista de acrônimos, abreviações (tem coisa lá que não é abreviação)
 - Formato, autorização dos co-autores
 
