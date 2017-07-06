@@ -11,7 +11,7 @@ refazer a conclusão para não deixar parte do texto de nenhum artigo. tirar o ter
 - (OK) Não deveria deixar nome de usuário aparececendo.
 - (OK) extra: Modificacoes para deposito no comeco da tese, banca de defesa
 - lista de acrônimos, abreviações (tem coisa lá que não é abreviação)
-- Formato, autorização dos co-autores
+- (? - Nao sei bem o q fazer aqui) Formato, autorização dos co-autores
 
 
 ## Correcoes de Conteudo - MINOR - 1/2h each
