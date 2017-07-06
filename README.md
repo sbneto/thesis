@@ -10,7 +10,7 @@ refazer a conclusão para não deixar parte do texto de nenhum artigo. tirar o ter
 - (OK) trazer o apêndice para o cap 2, contextualizar. +extra: arrumar titulos das tabelas
 - (OK) Não deveria deixar nome de usuário aparececendo.
 - (OK) extra: Modificacoes para deposito no comeco da tese, banca de defesa
-- lista de acrônimos, abreviações (tem coisa lá que não é abreviação)
+- (OK - removi a lista, nao achei no template aprovado pela CPG uma lista de acronimos ou definicoes para mover os itens relevantes para la https://www.ime.usp.br/dcc/pos/normas/tesesedissertacoes) lista de acrônimos, abreviações (tem coisa lá que não é abreviação)
 - (? - Nao sei bem o q fazer aqui) Formato, autorização dos co-autores
 
 
