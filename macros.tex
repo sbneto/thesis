@@ -35,7 +35,7 @@
 }
 
 \newcounter{rowcount}
-\newcommand{\tweetTableFull}[3] {
+\newcommand{\tweetTableFull}[4] {
 %\onecolumn
 \setcounter{rowcount}{0}
 \begin{table*}[!htbp]
@@ -46,14 +46,8 @@
 		\setlength\tabcolsep{0.1cm}
 		\begin{tabularx}{\linewidth}{|>{\raggedright\arraybackslash}m{0.3cm}|>{\raggedright\arraybackslash}m{0.8cm}|>{\raggedright\arraybackslash}m{14cm}|}
 			\cline{1-3}
-			\centering\arraybackslash \textbf{\#} & \centering\arraybackslash \textbf{Score} & \centering\arraybackslash \textbf{Retweets} \\ \cline{1-3} 
+			\centering\arraybackslash \textbf{\#} & \centering\arraybackslash \textbf{Score} & \centering\arraybackslash \textbf{#4} \\ \cline{1-3} 
 			\input{#3}
-			%\multicolumn{3}{l}{}\\ \cline{1-3}
-			%\centering\arraybackslash \textbf{\#} & \centering\arraybackslash \textbf{Score} & \centering\arraybackslash \textbf{Replies} \\ \cline{1-3} 
-			%\input{#4}
-			%\multicolumn{3}{l}{}\\ \cline{1-3}
-			%\centering\arraybackslash \textbf{\#} & \centering\arraybackslash \textbf{Score} & \centering\arraybackslash \textbf{Non-Tagged} \\ \cline{1-3} 
-			%\input{#5}
 		\end{tabularx}
 	\caption{#1}
 	\label{tab:#2}

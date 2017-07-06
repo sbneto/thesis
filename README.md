@@ -1,16 +1,16 @@
-# defesa do Samuel - 20170529
+# Defesa do Samuel - 20170529
 
 ## Correcoes de Forma
 
 - (OK) a capa está errada com a data de defesa e depósito, a lista de abreviações tem definições, referências bibliográficas precisam ser padronizadas, nossos nomes (Cesar sem acento, Claudio).
 Erro no nome do Claudio e no meu
-- formato de coleção de artigos: deixar no começo de cada capítulo que o conteúdo vem do artigo correspondente. footnote no início de cada capítulo.
+- (OK) formato de coleção de artigos: deixar no começo de cada capítulo que o conteúdo vem do artigo correspondente. footnote no início de cada capítulo.
 Existe alguma coisa muito diferente do texto original? Em relação aos papers. Se isso aconteceu, precisa deixar claro. Assim como mencionará que cada cap 2 e 3 saiu dos papers x e y, etc.
 refazer a conclusão para não deixar parte do texto de nenhum artigo. tirar o termo ongoing work.
-- Não deveria deixar nome de usuário aparececendo.
+- (OK) trazer o apêndice para o cap 2, contextualizar. +extra: arrumar titulos das tabelas
+- (OK) Não deveria deixar nome de usuário aparececendo.
 - lista de acrônimos, abreviações (tem coisa lá que não é abreviação)
 - Formato, autorização dos co-autores
-- trazer o apêndice para o cap 2, contextualizar.
 
 
 ## Correcoes de Conteudo - MINOR - 1/2h each

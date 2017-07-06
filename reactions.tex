@@ -1,4 +1,5 @@
-\chapter{Using Text Similarity to Detect Social Interactions not Captured by Formal Reply Mechanisms}
+\chapter{Using Text Similarity to Detect Social Interactions not Captured by Formal Reply Mechanisms\raisebox{.3\baselineskip}{\normalsize\footnotemark}}
+\footnotetext{The contents of this chapter were published at the 2015 IEEE 11th International Conference on e-Science (e-Science'15)\cite{Barbosa}. Some adaptations were made to include further research and adjust the format to this thesis.}
 \label{ch:reactions}
 
 Studies on social networks often use actions people take on other people's online content as evidence of social interactions for developing their models. In domains including Usenet \cite{Joyce2006}, Wikipedia \cite{Black2011}, and Facebook \cite{Gilbert2009}, explicit replies are interpreted as evidence of interpersonal interaction and social ties.  These explicit reactions are also used in studies of influence online, such as predicting when an item is likely to be forwarded in Twitter (e.g., \cite{Suh2010,Comarela2012}).
@@ -337,13 +338,31 @@ Surprisingly, this is not what is observed in Figure \ref{fig:fig_tweets_histogr
 \subsection{Features of Replies, Retweets and Non-Tagged messages}
 
 To help understand the mystery of low-scoring retweets, and more generally to understand what sorts of markers the method is using to identify potential responses, a sample of representative tweets from each category across a range of normalized similarity scores is examined.  
-Tables \ref{tab:tweetsScoresRetweets}, \ref{tab:tweetsScoresReplies} and \ref{tab:tweetsScoresNonTagged} (see the Appendix) show both the user's tweet (top in each pair) and the text of the highest-scoring followee's tweet in the window for that tweet (bottom in each pair).
+Tables \ref{tab:tweetsScoresRetweets}, \ref{tab:tweetsScoresReplies} and \ref{tab:tweetsScoresNonTagged} show both the user's tweet (top in each pair) and the text of the highest-scoring followee's tweet in the window for that tweet (bottom in each pair).
+
+\tweetTableFull
+{Pairs of users' tweets (top in each row) and highest scoring messages in the windows (bottom in each row) for Retweets.  Tweets were randomly selected across the range of scores in each set.}
+{tweetsScoresRetweets}
+{./tables/tweets_table_retweets_anon}
+{Retweets}
 
 For system tagged Retweets, most of the high scored content has almost the same content as the original message (as expected), as in tweets \#1 and \#2 in the table.  One interesting thing to notice here is that as the tweet length decreases, the normalized similarity score goes down (compare \#6 to \#1). This is related to the fact that the $tf\mhyphen idf$ score is sensitive to the number of matched words between the query and the document.  
 Below a threshold of around $0.3$ in this dataset, this effect disappears.  Instead, the text starts to look more like 
 two tweets about a common external topic (\#7, \#8, \#9)---despite the fact that the tweet text preserves the ``RT'' retweet marker.  These would be likely candidates for actual retweets that occur outside the window, either farther back in the feed or other parts of the interface than the feed.
 
+\tweetTableFull
+{Pairs of users' tweets (top in each row) and highest scoring messages in the windows (bottom in each row) for Replies.  Tweets were randomly selected across the range of scores in each set.}
+{tweetsScoresReplies}
+{./tables/tweets_table_replies_anon}
+{Replies}
+
 When looking at system tagged Replies, high-scoring replies show two main patterns.  In one, they look largely like retweets that were tagged as replies, likely because people pressed the reply button and pasted text from the text they replied to, as in \#11.  In the other, the tweet mentions multiple users who are conducting an ongoing conversation and want all of them to be notified when someone posts something new, as in \#12 and \#13.  It is important to notice that this set of tweets has a maximum score lower than the other sets; scores on the higher end of the distribution could not be found. Also, it appears that @-mentions are the main source of evidence for the normalized similarity scoring even as it goes down, and in fact, replies with low scores still often look like replies despite the low $tf\mhyphen idf$.  This is often (\#16, \#19) but not always (\#18, \#20) indicated by bi-directional @-mentions of the conversational partner.
+
+\tweetTableFull
+{Pairs of users' tweets (top in each row) and highest scoring messages in the windows (bottom in each row) for Non-Tagged tweets.  Tweets were randomly selected across the range of scores in each set.}
+{tweetsScoresNonTagged}
+{./tables/tweets_table_nontagged_anon}
+{Non-Tagged}
 
 When looking at Non-Tagged tweets, one of the first things to notice is that high scored tweets usually are retweets that were not captured by the system.  In some cases it is likely users are manually copying the content of the messages and adding retweet markers (\#23, \#24); in others, it is more likely that both users are independently retweeting external content (\#21, \#22).  Users often make small comments together with the original text (\#22, \#23, \#25).  As the normalized similarity score goes down, the messages look less like a retweet, but often still appear to be topically related, sometimes via hashtags (\#28, \#29).  
 
