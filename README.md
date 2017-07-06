@@ -1,6 +1,6 @@
-defesa do Samuel - 20170529
+# defesa do Samuel - 20170529
 
-### Correcoes de Forma
+## Correcoes de Forma
 	
 	(OK) - a capa está errada com a data de defesa e depósito, a lista de abreviações tem definições, referências bibliográficas precisam ser padronizadas, nossos nomes (Cesar sem acento, Claudio).
 	Erro no nome do Claudio e no meu
@@ -18,7 +18,7 @@ defesa do Samuel - 20170529
 	- trazer o apêndice para o cap 2, contextualizar.
 
 
-### Correcoes de Conteudo - MINOR - 1/2h each
+## Correcoes de Conteudo - MINOR - 1/2h each
 
 	- pergunta: qual área de computação sua contribuição reside? computational social science de Cornell.
 	
@@ -36,7 +36,7 @@ defesa do Samuel - 20170529
 
 	- explicar como foi feita a conta dos 11pct da tabela 2.6.
 
-### Correcoes de Conteudo - MAJOR
+## Correcoes de Conteudo - MAJOR
 
 	- Fabricio: faltou motivação na introdução para os dois trabalhos, twitter e reddit. A apresentação dos slides deixou uma passagem mais suave. Jesus: Faltou uma melhor contextualização no capítulo 1. Todo mundo falou isso. Precisamos melhorar. Aproveitar os comentários da arguição para tentar responder ao máximo e deixar claro na própria introdução (motivação, background, diferenças dos trabalhos do estado da  arte, trabalho da Taxidou, etc) objetivos: deixar mais claros, falar de objetivos  específicos. Tirar o termo estudar. Luc: a intro precisa deixar claro: por que os objetivos da tese levaram às contribuições dos capítulos 2 e 3. aproveitar a intro dos slides / apresentação da defesa na intro da tese
 
@@ -46,7 +46,7 @@ defesa do Samuel - 20170529
 
 	- Fab: faltou apresentar os datasets com clareza, criar seção específica e uma tabela resumindo as principais características dos datasets, características, datas de início e fim, número de amostras, número de classes, retweets, replies, vamos criar uma tabela com formato específico e semelhante para ambos capítulos. Luc: melhorar a intro, incluir seção de conceitos básicos, falar da escolha das redes, detalhamento de conjuntos de dados usados. a análise do twitter não tinha dado de entrada dos users na rede? a tab 2.4 não tem informação sobre ego-networks. Acrescentar.
 
-### Future work
+## Future work
 
 	- Poderíamos usar outras mídias (informações não textuais, imagem, etc) na análise do tweeter? mencionar em trabalhos futuros. separar a dicussão conceitual da implementação. o método poderia ser usado na análise de outros microblogs?
 
@@ -62,7 +62,7 @@ defesa do Samuel - 20170529
 
 	- aplicação em botnet e fake news
 
-### Questoes que requerem novos testes ou reescrita extensa do texto - NOT DOING
+## Questoes que requerem novos testes ou reescrita extensa do texto - NOT DOING
 
 	- usar a mediana, pois a média pode não fazer tanto sentido. precisa discutir quão robusta é a conclusão. Fab: incluir gráficos da normalização, slide Next Steps, e discutir o impacto nas conclusões. como validar os 11pct? foi feito implicitamente.  discutir como isso poderia ser feito.
 
