@@ -46,7 +46,7 @@ refazer a conclusão para não deixar parte do texto de nenhum artigo. tirar o ter
 - trabalhos futuros: considerar 100 últimos similares, ao invés de apenas os 100 útimos. Claudio: questão dos 100 tweets
 - aplicação em botnet e fake news
 
-## Questoes que requerem novos testes ou reescrita extensa do texto - NOT DOING
+<!-- ## Questoes que requerem novos testes ou reescrita extensa do texto - NOT DOING
 
 - na intro: ...diferenças dos trabalhos do estado da  arte, trabalho da Taxidou, etc)
 - usar a mediana, pois a média pode não fazer tanto sentido. precisa discutir quão robusta é a conclusão. Fab: incluir gráficos da normalização, slide Next Steps, e discutir o impacto nas conclusões. como validar os 11pct? foi feito implicitamente.  discutir como isso poderia ser feito.
@@ -56,3 +56,4 @@ refazer a conclusão para não deixar parte do texto de nenhum artigo. tirar o ter
 - muita mistura de métodos, dados, resultados (conclusões da análise). Separar bem essas 3 coisas. reorganizar a conclusão, diminuindo seu tamanho e facilitando a compreensão para o leitor.
 - a janela é definida em 82pct. O que acontece se aumentar?
 - capítulo 3 apresenta hipóteses e pesquisa que daí decorre. O capítulo 2 precisa ter isso.
+ -->
