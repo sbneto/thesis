@@ -18,11 +18,11 @@ refazer a conclusão para não deixar parte do texto de nenhum artigo. tirar o ter
 ## Correcoes de Conteudo - MINOR - 1/2h each
 
 - INTRO:
-	- Fabricio: faltou motivação na introdução para os dois trabalhos, twitter e reddit. Jesus: Faltou uma melhor contextualização no capítulo 1. Aproveitar os comentários da arguição para tentar responder ao máximo e deixar claro na própria introdução (motivação, background...). objetivos: deixar mais claros, falar de objetivos  específicos. Luc: a intro precisa deixar claro: por que os objetivos da tese levaram às contribuições dos capítulos 2 e 3. 
-	- A apresentação dos slides deixou uma passagem mais suave. aproveitar a intro dos slides / apresentação da defesa na intro da tese
-	- pergunta: qual área de computação sua contribuição reside? computational social science de Cornell.
-	- Mencionar sua atuação atual, getninjas, projeto PIPE FAPESP
-- Documentar que Proposal of the problem of studying users' indirect reactions. é uma contribuição, que ninguém percebeu. citar as refs.
+	- (OK) Fabricio: faltou motivação na introdução para os dois trabalhos, twitter e reddit. Jesus: Faltou uma melhor contextualização no capítulo 1. Aproveitar os comentários da arguição para tentar responder ao máximo e deixar claro na própria introdução (motivação, background...). objetivos: deixar mais claros, falar de objetivos  específicos. Luc: a intro precisa deixar claro: por que os objetivos da tese levaram às contribuições dos capítulos 2 e 3. 
+	- (OK) A apresentação dos slides deixou uma passagem mais suave. aproveitar a intro dos slides / apresentação da defesa na intro da tese
+	- (OK) pergunta: qual área de computação sua contribuição reside? computational social science de Cornell.
+	- (OK) Mencionar sua atuação atual, getninjas, projeto PIPE FAPESP
+- (OK) Documentar que Proposal of the problem of studying users' indirect reactions. é uma contribuição, que ninguém percebeu. citar as refs.
 - Complexidade computacional dos métodos empregados na análise. falar sobre esse tópico em uma seção específica na conclusão. falar da importância do big query etc. 
 - fig 3.5 e descontinuidade, analisar e explicar melhor.
 - enfatizar melhor como  a fig 2.6 explica grande parte das questões levantadas.
