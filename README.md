@@ -15,7 +15,7 @@ refazer a conclusão para não deixar parte do texto de nenhum artigo. tirar o ter
 - (OK) Tirar o termo estudar.
 
 
-## Correcoes de Conteudo - MINOR - 1/2h each
+## Correcoes de Conteudo - QUICK FIX - 1/2h each
 
 - INTRO:
 	- (OK) Fabricio: faltou motivação na introdução para os dois trabalhos, twitter e reddit. Jesus: Faltou uma melhor contextualização no capítulo 1. Aproveitar os comentários da arguição para tentar responder ao máximo e deixar claro na própria introdução (motivação, background...). objetivos: deixar mais claros, falar de objetivos  específicos. Luc: a intro precisa deixar claro: por que os objetivos da tese levaram às contribuições dos capítulos 2 e 3. 
@@ -29,7 +29,7 @@ refazer a conclusão para não deixar parte do texto de nenhum artigo. tirar o ter
 - ferramentas para análise: o que vc desenvolveu? o que vc usou pronto? indicar isso nos materiais e métodos de cada cap 2, 3. Algo pode ser compartilhado, disponibilizado?
 - explicar como foi feita a conta dos 11pct da tabela 2.6.
 
-## Correcoes de Conteudo - MAJOR
+## Correcoes de Conteudo - WILL TAKE MORE TIME
 
 - Definicoes e metodos em geral: Fab: pg 10: qual a motivação para o tf-idf? comentar um pouco no texto. Comentar a modificação por vc criada. Jesus: complementar sobre conceitos básicos, tf-idf, precision  recall, redução à raiz, retirada de plural, etc. faltou definição de conceitos importantes, como tf-idf, ego-network, fazer isso em uma seção específica no início de cada capítulo 2, 3, formalizar o que é uma reação implícita / explícita. Termo normalized tf idf. Precisa definir. na def das métricas, é importante deixar claro 0 é ruim?1 é o máximo e melhor? a métrica captura bem o retweet e o esforço
 - Conexão com com 2 trabalhos, Taxidou, qual a diferença dos trabalhos anteriores com a proposta da sua tese? Deixar isso claro. 
