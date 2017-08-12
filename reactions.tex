@@ -9,9 +9,9 @@ Not all responses, however, are explicitly marked by the system.  For instance, 
 Being able to identify these non-obvious, indirect responses might allow researchers to have a more accurate view of social interaction than explicit mechanisms provide.  This might also improve overall estimates of users' responsiveness to others, for instance,
 at the individual level, they might indicate how desirable a user is as a follower: people might wish to have followers who are more likely to redistribute their content.  Aggregating responsiveness of a user's followers at the ego network level could support better estimates of an individual's potential reach or influence \cite{Domingos2001} based on the responsiveness of their followers.  Better responsiveness measures could also improve transmission probabilities in epidemiology-inspired models of diffusion in social networks \cite{Bakshy2012a}. 
 
-This chapter assesses the prevalence of non-explicit responses in a dataset drawn from Twitter \cite{BarbosaNeto2013, Barbosa}. It is proposed a measure of normalized textual similarity between a user's tweets and recent friends' tweets based on $tf\mhyphen idf$ scores.  Comparing this to the explicit responses provided by the system shows that explicit indicators of response (replies and retweets) in Twitter are in fact associated with high normalized similarity scores.  Choosing conservative score cutoffs for predicting that a tweet is a response and manually inspecting high-scoring tweets that are not marked as responses suggests that explicit indicators miss at least \highNonTaggedTweetCountPct{}\% of reactions. 
+This chapter assesses the prevalence of non-explicit responses in a dataset drawn from Twitter \cite{BarbosaNeto2013, Barbosa}. It is proposed a measure of normalized textual similarity between a user's tweets and recent friends' tweets based on $tf\mhyphen idf$ scores.  Comparing this to the explicit responses provided by the system shows that explicit indicators of response (replies and retweets) in Twitter are in fact associated with high normalized similarity scores.  Choosing conservative score cutoffs\footnote{We evaluate the average score for sets of messages that we know that are reactions. We end up picking the retweets' average, specially since they are a copy of the original message.} for predicting that a tweet is a response and manually inspecting high-scoring tweets that are not marked as responses suggests that explicit indicators miss at least \highNonTaggedTweetCountPct{}\% of reactions. 
 Furthermore, this varies between users: some users systematically fail to use formal response mechanisms, meaning that these users are under-represented in studies that rely on explicit indicators of response and under-counted when considering their potential as information spreaders. These results show that the problem of non-explicit responses is an important one with practical implications for understanding interaction and influence online. 
-Later work \cite{taxidou2016} studies a similar problem of identifying implicit responses from a provenance point of view. It uses a similar tf-idf method \cite{de2015}, although considering a more holistic approach in contrast with a ego-network, user-centered approach. We discuss the similarities and the results of both methods.
+Later work \cite{taxidou2016} studies a similar problem of identifying implicit responses from a provenance point of view. It uses a similar tf-idf method \cite{de2015}, although considering a more holistic approach in contrast with a ego-network, user-centered approach\footnote{The ego-network for the node $U$ can be defined as the sub-network of the neighbours of $u$ and $u$ itself, together with all the edges connecting these nodes. You can grown an ego-network by adding neighbours of neighbours, considering paths of length greater than 1 as part of the network as well.}. We discuss the similarities and the results of both methods.
 
 
 \section{Related Work}
@@ -99,7 +99,8 @@ Goyal et al. \cite{Goyal2010} estimate pairwise influence probability based on t
 Network structure also plays an important role in feed personalization.  
 Uysal et al. \cite{Uysal2011} developed a personalized tweet ranking method based on a retweet metric, useful in reordering feeds or distributing items to users more likely to retweet. 
 Paek et al. \cite{Paek2010} asked Facebook users about the perceived importance of items in their timeline, developed classifiers to identify important messages and friends, and studied the predictive power of a number of features including likes, number of comments, presence of links and images, textual information, and shared background information. 
-Both the tie strength and network structure approaches rely on explicit interaction as a tool for estimating tie strength; just as with retweet prediction, being able to identify non-explicit responses might improve these models.
+
+Just as with retweet prediction, approaches that estimate tie strength and promote feed personalization rely on explicit interactions for their analyses. With that in mind, being able to identify non-explicit responses might improve these models.
 
 Most related to this work are text-focused approaches.  Text is commonly used in feed personalization, by comparing content similarity of Tweets or users to a user's previous activity.  
 Hannon et al. \cite{Hannon2011} developed a system for follower recommendation on Twitter based on $tf\mhyphen idf$ similarity between the users' newsfeeds. 
@@ -112,7 +113,24 @@ This is often a more feasible approach when dealing with online social networks,
 Ego networks are often useful for studying interaction and influence \cite{Welser2011,Sharma2013}; here, they are appropriate because the method requires only a user's content and his followees' in order to reconstruct the feed windows.
 
 %% DC 24: Okay, trying one more tweaking, but not complete rewriting, of this.
-The dataset explored in this chapter was collected as part of a project to investigate differences in online behavior between political groups, driven by observations that, in the U.S. 2012 presidential election, Democrats were more active and effective in social media than Republicans.  This work draws on that dataset, using ego networks on Twitter belonging to users that followed Barack Obama crawled in the first three weeks of December 2012 using V1.0 of the Twitter API.
+The dataset explored in this chapter was collected as part of a project to investigate differences in online behavior between political groups, driven by observations that, in the U.S. 2012 presidential election, Democrats were more active and effective in social media than Republicans.  This work draws on that dataset, using ego networks on Twitter belonging to users that followed Barack Obama crawled in the first three weeks of December 2012 using V1.0 of the Twitter API. An overview of this dataset can be seen in Talbe \ref{tab:dataInfo}.
+
+\begin{table}[!hb]
+	\centering
+	\fontsize{9pt}{10pt}\selectfont
+		\begin{tabular}{|l|c|}
+			\hline
+			Users & \totalUsers{} \\ \hline
+			Tweets & \totalTweets{} \\ \hline
+			Average Tweets/User & \averageTweetsUser{} \\ \hline
+			Min Tweets/User & \minTweetsUser{} \\ \hline
+			Max Tweets/User & \maxTweetsUser{} \\ \hline
+			Retweets & \totalRetweets{} \\ \hline
+			Replies & \totalReplies{} \\ \hline
+		\end{tabular}
+\caption{An overview of the data collected for this work.}
+	\label{tab:dataInfo}
+\end{table}
 
 \subsection{IBM Internship}
 
@@ -135,7 +153,7 @@ This section presents the definition of the problem and the method used to attac
 
 When users decide to post a message in Twitter, they might be reacting to some content they saw from one of their followees. The first assumption is that the evidence for these reactions are the textual features in a given tweet by user $u$ and textual features in the set of recent tweets by $u$'s followees. Another assumption is that, if $u$ tweeted in reaction to a followee's message, there should be higher text similarity between that tweet and that message. This work focus on text features, rather than user or network characteristics found in prior work, because they have been shown to be useful while simplifying data collection, computation, and modeling.
 
-This leads to this chapters's first research question (\ResearchQuestion\label{rq:similarityPotential}), about whether text similarity has potential for identifying non-explicit responses. 
+This leads to this chapter's first research question (\ResearchQuestion\label{rq:similarityPotential}), about whether text similarity has potential for identifying non-explicit responses. 
 Do explicit responses in fact tend to have high text similarity? If so, what fraction of high-scoring tweets are non-explicit?  And, even when similarity is lower, when might non-explicit responses be present?
 
 The second research question (\ResearchQuestion\label{rq:usersDistribution}) asked is how these non-explicit responses are distributed among users.  Are many users ``invisible'' because, although they appear to be responsive based on scores, their responses are not explicit?  Why are they lost?  Are they naive or low-frequency users who do not know better than to retype or cut and paste or restate? And, is this likely to be important in estimating the overall responsiveness of users?
@@ -157,7 +175,7 @@ Figure \ref{fig:fig_window_explanation} illustrates the window.
 
 Each tweet in a user's feed also carries associated meta-data besides the message itself, such as the author's profile and user name, tweet creation time, number of times liked, and number of times retweeted. In this analysis, users are modeled as primarily paying attention to the textual content when considering a response; thus, only textual features the user's feed exposes are considered.  
 
-Tweets are first preprocessed using Python's NLTK package \cite{Bird2009} to be lower case, remove stopwords, and apply Snowball stemming, all common practices when using $tf\mhyphen idf$ scoring.  Hashtags, usernames, and processed words are then extracted using the regular expressions shown in Table \ref{tab:regularExpressions}.  Finally, the tweet author's username is added as a feature since that is also visible in the feed.
+Tweets are first preprocessed using Python's NLTK\footnote{Natural Language Toolkit.} package \cite{Bird2009} to be lower case, remove stopwords, and apply Snowball stemming, all common practices when using $tf\mhyphen idf$ scoring.  Hashtags, usernames, and processed words are then extracted using the regular expressions shown in Table \ref{tab:regularExpressions}.  Finally, the tweet author's username is added as a feature since that is also visible in the feed.
 
 %% DC 16: In general, unless there's a strong IEEE style guideline against it, figures and tables should go at the top or bottom of pages rather than in the middle.
 \begin{table}[!tb]
@@ -183,8 +201,8 @@ Tweets are first preprocessed using Python's NLTK package \cite{Bird2009} to be 
 \label{fig:fig_tfidf_explanation}
 \end{figure}
 
-The text similarity metric used for this task was the $tf\mhyphen idf$ scoring. It is a proven technique for information retrieval commonly employed in analyzing Twitter data. 
-$tf\mhyphen idf$ stands for term frequency and inverse document frequency. This method takes as input a set of documents $D$, where each $document$ is a set of $terms$, and produces a document-by-term matrix of $tf\mhyphen idf$ scores. These functions can be scaled, but usually the $tf$ is not scaled and the $idf$ is logarithmically scaled. For a given $(document,term)$ matrix entry, the $tf$ function is the $term$ occurrence count in the $document$, as in \ref{eq:tf}, and the $idf$ function is given by Equation \ref{eq:idf}.
+The text similarity metric used for this task was the $tf\mhyphen idf$ scoring. It is a proven technique \cite{salton1988term, adomavicius2005toward} for information retrieval commonly employed in analyzing Twitter data. 
+$tf\mhyphen idf$ stands for term frequency and inverse document frequency. This method takes as input a set of documents $D$, where each $document$ is a set of $terms$, and produces a document-by-term matrix of $tf\mhyphen idf$ scores. These functions can be scaled, but usually the $tf$ is not scaled and the $idf$ is logarithmically scaled \cite{robertson2004understanding}. For a given $(document,term)$ matrix entry, the $tf$ function is the $term$ occurrence count in the $document$, as in \ref{eq:tf}, and the $idf$ function is given by Equation \ref{eq:idf}.
 
 \begin{equation}
 tf(d,term) = \frac{|\left\{w| w \in d, w = term\right\}|}{|d|}
@@ -273,13 +291,13 @@ Tagged tweets are defined as those indicated by the API as explicit responses, i
 			Windows std. deviation (h) & \windowStdSize{} \\ \hline
 			Windows min size (h) & \windowMinSize{} \\ \hline
 		\end{tabular}
-\caption{Descriptive data. Tweet counts are based on ego users. Each tweet may be tagged either as a retweet or a reply. Replies also provide the replied tweet id, allowing us to count how often a tagged reply refers to a tweet in the window.  As with Comarela et al.  \cite{Comarela2012}, over 80\% of tagged replies reference one of the 100 most recent tweets. }
+\caption{Overview of the data considering our window definition. Each tweet may be tagged either as a retweet or a reply. Replies also provide the replied tweet id, allowing us to count how often a tagged reply refers to a tweet in the window. As with Comarela et al.\cite{Comarela2012}, over 80\% of tagged replies reference one of the 100 most recent tweets. }
 	\label{tab:databaseInformation}
 \end{table}
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[scale=1]{./figures/window_time_size_histogram.eps}
+\axisPic{\includegraphics[scale=1]{./figures/window_time_size_histogram.eps}}{Hours}{Percentage}
 \caption{Cumulative distribution function for the time length of the windows given in hours. Most windows' lengths are in the interval $[10^{-1}, 10^1]$ hours; about 60\% of windows are 1 hour or less, meaning users receive on average over 100 tweets an hour.}
 \label{fig:window_time_size_histogram}
 \end{figure}
@@ -370,27 +388,29 @@ In general, higher normalized similarity scores seem to capture retweets reasona
 %% DC 16: I don't really believe the following argument: #21 and 22 look much more like external stimulus to me.
 %One initial concern about using text similarity was that it would be hard to distinguish actual responses from situations where people comment on a common external stimulus.  
 %In these data, however, high scores appear to be reliably associated with responses rather than external stimulus.
-Further, even the conservative estimate chosen shows that non-explicit responses are quite common---and it is likely that a number of the of the ``middle scoring'' tweets are actual responses.  Distinguishing those from external influences or underlying interest similarity would be an important next problem in building better models of non-explicit response.  
+Further, even the conservative estimate chosen shows that non-explicit responses are quite common---and it is likely that a number of the ``middle scoring'' tweets are actual responses.  Distinguishing those from external influences or underlying interest similarity would be an important next problem in building better models of non-explicit response.  
 
 \subsection{Variations in User Responsiveness}
 
-The previous sections demonstrate that it is likely that \highNonTaggedTweetCountPct{}\% or more of Non-Tagged tweets are responses that are not explicitly captured by the system.  This section addresses the other main research question \ref{rq:usersDistribution} of how these losses are distributed among different users in the network.   
+The previous sections demonstrate that \highNonTaggedTweetCountPct{}\% or more of Non-Tagged tweets are likely to be responses that are not explicitly captured by the system.  This section addresses the other main research question \ref{rq:usersDistribution} of how these losses are distributed among different users in the network.   
 
 These Non-Tagged high-scored messages were authored by \highUserCount{} of the \totalUsers{} users (\highUserCountPct{}\%). This suggests that users generate responses that are missed in a non-uniform way: many users behave as the system expects, using explicit reply and retweet mechanisms, but a significant number respond, at least sometimes, without using those mechanisms. 
 Figure \ref{fig:users_reponse_histograms} shows histograms for example users that have most or all of their responses untagged by Twitter even though they present a high $score$.  Note that these users span a range of activity levels, meaning that they are not just newbies that do not know how to use the interface.
 
 \begin{figure}[!tb]
+\axisPic{
 \centering
 \includegraphics[scale=0.9]{./figures/213501392_histogram.eps}
-\includegraphics[scale=0.9]{./figures/808181892_histogram.eps}
+\includegraphics[scale=0.9]{./figures/808181892_histogram.eps} 
 \includegraphics[scale=0.9]{./figures/87339782_histogram.eps}
 \includegraphics[scale=0.9]{./figures/196322186_histogram.eps}
+}{Score}{Number of messages}
 \caption{Score histograms for sample users who present a significant amount of high scored Non-Tagged content relative to their total amount of messages, which indicates that most of their reactions are not being properly tagged by Twitter.}
 \label{fig:users_reponse_histograms}
 \end{figure}
 
 
-In order to better understand the behavior distribution among all users, Figure \ref{fig:2d_histogram} shows a 2d-histogram for the points $(p_i^T, p_i^N)$, where each of these points is the percentage of the Tagged messages $p_i^T$ and the percentage of the high scored Non-Tagged messages $p_i^N$.  Each of these points is evaluated for a user $u_i$ in relation to the total number of messages the user authored.
+In order to better understand the behavior distribution among all users, Figure \ref{fig:2d_histogram} shows a 2d-histogram for the points $(p_i^T, p_i^N)$, where each of these points is the percentage of the Tagged messages $p_i^T$ and the percentage of the high scored Non-Tagged messages $p_i^N$.  Each of these points is evaluated for a user $u_i$ in relation to the total number of messages this user authored.
 The high scored Non-Tagged percentage $p_i^N$ is the proportion of this user behavior that were likely to be reactions while the percentage $p_i^T$ is the proportion of reactions actually captured.
 
 
@@ -408,7 +428,7 @@ Many users are non-responsive (the point at the origin) or use the explicit resp
 
 \begin{figure}[!tb]
 \centering
-\includegraphics[scale=1]{./figures/users_high_nontagged_pct_cdf.eps}
+\axisPic{\includegraphics[scale=1]{./figures/users_high_nontagged_pct_cdf.eps}}{Users}{Percentage}
 \caption{Cumulative distribution of the users for the percentage of high scored Non-Tagged messages. \usersZeroHighScoredPct{}\% of the users have no high scored Non-Tagged messages, while \usersMoreThanTenPctPct{}\% of the users had at least 10\% of their messages high scored and Non-Tagged.}
 \label{fig:cumulative_user}
 \end{figure}

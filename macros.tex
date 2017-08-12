@@ -68,3 +68,21 @@
         \caption{#3}\end{subfigure}
     \endgroup
 }
+
+
+\newcommand{\axisPic}[3] {
+\begin{tikzpicture}
+  \node (img1)  {\begin{varwidth}{\linewidth}#1\end{varwidth}};
+  \node[below=of img1, node distance=0cm, yshift=1cm,font=\color{black}] {#2};
+  \node[left=of img1, node distance=0cm, rotate=90, anchor=center,yshift=-0.7cm,font=\color{black}] {#3};
+\end{tikzpicture}
+}
+
+% \begin{tikzpicture}
+%   \node (img1)  {\includegraphics[scale=0.225]{example-image}};
+%   \node[below=of img1, node distance=0cm, yshift=1cm,font=\color{red}] {x-axis};
+%   \node[left=of img1, node distance=0cm, rotate=90, anchor=center,yshift=-0.7cm,font=\color{red}] {y-axis};
+%   \node[right=of img1,yshift=0.1cm] (img2)  {\includegraphics[scale=0.25]{example-image}};
+%   \node[below=of img2, node distance=0cm, yshift=1cm,font=\color{red}] {x-axis};
+%   \node[left=of img2, node distance=0cm, rotate=90, anchor=center,yshift=-0.7cm,font=\color{red}] {y-axis};
+% \end{tikzpicture}
